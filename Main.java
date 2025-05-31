@@ -1,47 +1,25 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-
-import javax.swing.*; //JLabel: Para mostrar texto dentro de esa ventana.
-
-import Vistas.LoginPanel;
+import javax.swing.*;
+import vistas.BannerPanel;
+import vistas.LoginView;
 
 public class Main {
 
-public static void main(String[] args ) {
+    public static void main(String[] args) {
+        // Título y tamaño de la ventana
+        JFrame miVentana = new JFrame();
+        miVentana.setTitle("Hospital SCL");
+        miVentana.setSize(1000, 800);
+        miVentana.setLayout(new BorderLayout());
+        miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        // BannerPanel
+        BannerPanel panelBanner = new BannerPanel();
+        miVentana.add(panelBanner.getJPanel(), BorderLayout.WEST);
 
-//crear una ventana con frame
+        // LoginView (con frame pasado)
+        LoginView panelLogin = new LoginView(miVentana); 
+        miVentana.add(panelLogin.getJPanel(), BorderLayout.CENTER);
 
-JFrame miVentana = new JFrame(); ///crear un objeto JFrame (miventana)
-miVentana.setTitle("Hospital SCL"); //Establecer un titulo
-miVentana.setSize(1000,800); //Definir el tamanno, ancho y alto
-miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-miVentana.setLayout(new BorderLayout());
-
-
-//CAJA
-
-//PANEL BANNER
-JPanel panelBanner = new JPanel();
-panelBanner.setPreferredSize(new Dimension(500,800));
-panelBanner.setOpaque(true);
-panelBanner.setBackground(Color.RED);
-miVentana.add(panelBanner,BorderLayout.WEST);
-
-
-
-//LLAMAR A EL OTRO PANEL
-//Panel login
-LoginPanel panelLogin = new LoginPanel();
-miVentana.add(panelLogin.getJPanel());
-
-
-
-
-miVentana.setVisible(true); //mostrar la ventana
-
-
-}
-
-
+        miVentana.setVisible(true);
+    }
 }
