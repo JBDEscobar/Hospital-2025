@@ -3,6 +3,8 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
+import Paneles.TablaPanel;
+
 public class DashBoard extends JFrame {
 
     public DashBoard(){
@@ -11,8 +13,14 @@ public class DashBoard extends JFrame {
         this.setVisible(true);
         this.setBackground(Color.GREEN);
 
+        // PANELES TABLA
+        TablaPanel miTabla = new TablaPanel();
+        this.add(miTabla.getTabla());
+
+        // PANEL MENU LATERAL
     }
+
    public JFrame getJFrame(){
-return this;
+        return this;
    }
 }
