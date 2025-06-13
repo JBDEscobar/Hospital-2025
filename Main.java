@@ -1,7 +1,8 @@
 import java.awt.BorderLayout;
 import javax.swing.*;
-import vistas.BannerPanel;
-import vistas.LoginView;
+
+import Paneles.BannerPanel;
+import Paneles.LoginView;
 
 public class Main {
 
@@ -12,6 +13,7 @@ public class Main {
         miVentana.setSize(1000, 800);
         miVentana.setLayout(new BorderLayout());
         miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        miVentana.setLocationRelativeTo(null);
         // BannerPanel
         BannerPanel panelBanner = new BannerPanel();
         miVentana.add(panelBanner.getJPanel(), BorderLayout.WEST);
