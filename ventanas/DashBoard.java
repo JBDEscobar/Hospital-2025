@@ -1,26 +1,25 @@
 package ventanas;
-import java.awt.Color;
 
-import javax.swing.JFrame;
-
-import Paneles.TablaPanel;
+import java.awt.*;
+import javax.swing.*;
+import Paneles.*;
 
 public class DashBoard extends JFrame {
 
-    public DashBoard(){
-        this.setTitle("DashBoard");
-        this.setSize(1920,1080);
+    public DashBoard() {
+        this.setTitle("Dashboard Principal");
+        this.setSize(1200, 800);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new BorderLayout());
+
+        // Panel Lateral (usando la clase PanelLateral)
+        PanelLateral panelLateral = new PanelLateral();
+        this.add(panelLateral, BorderLayout.WEST);
+
+        // Panel Central (Tabla)
+        TablaPanel panelTabla = new TablaPanel();
+        this.add(panelTabla, BorderLayout.CENTER);
+
         this.setVisible(true);
-        this.setBackground(Color.GREEN);
-
-        // PANELES TABLA
-        TablaPanel miTabla = new TablaPanel();
-        this.add(miTabla.getTabla());
-
-        // PANEL MENU LATERAL
     }
-
-   public JFrame getJFrame(){
-        return this;
-   }
 }

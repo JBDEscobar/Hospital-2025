@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 
 import Paneles.BannerPanel;
+
 import Paneles.LoginView;
 
 public class Main {
@@ -23,5 +24,6 @@ public class Main {
         miVentana.add(panelLogin.getJPanel(), BorderLayout.CENTER);
 
         miVentana.setVisible(true);
+
     }
 }

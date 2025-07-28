@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-public class Tabla extends JScrollPane {  
+public class Tabla extends JScrollPane {
 
     public Tabla() {
         // Columnas y datos
@@ -14,10 +14,10 @@ public class Tabla extends JScrollPane {
         // Crear modelo y tabla
         DefaultTableModel model = new DefaultTableModel(datos, columnas);
         JTable table = new JTable(model);
-        
+
         // Configurar este JScrollPane para contener la tabla
         this.setViewportView(table);
         this.setPreferredSize(new Dimension(1600,1000));
-        
+
     }
 }

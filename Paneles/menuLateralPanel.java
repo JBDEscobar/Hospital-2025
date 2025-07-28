@@ -5,7 +5,7 @@ import ventanas.DashBoard;
 
 import javax.swing.*;
 
-import javafx.geometry.Insets;
+
 
 public class menuLateralPanel {
 
